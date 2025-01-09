@@ -1,0 +1,70 @@
+<!-- Navbar with title, logo, and Home button -->
+<nav class="navbar">
+  <a href="/" class="logo">
+    <img src="/assets/logo.jpg" alt="Logo">
+    <h1>Website Title</h1>
+  </a>
+  <div class="navbar-links">
+    <a href="/home" class="nav-button">Home</a>
+  </div>
+</nav>
+
+<div class="register-container">
+    <h2>💡 Register 📝</h2>
+    <form (ngSubmit)="onRegister()">
+      <div class="form-group">
+        <label for="email">📧 Email:</label>
+        <input 
+          type="email" 
+          id="email" 
+          [(ngModel)]="email" 
+          name="email" 
+          required
+          pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+        >
+      </div>
+  
+      <div class="form-group">
+        <label for="password">🔒 Password:</label>
+        <input 
+          type="password" 
+          id="password" 
+          [(ngModel)]="password" 
+          name="password" 
+          required
+          pattern="(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}"
+          title="Password must be at least 8 characters long, include letters, numbers, and symbols."
+        >
+      </div>
+  
+      <div class="form-group">
+        <label for="confirmPassword">🔑 Confirm Password:</label>
+        <input 
+          type="password" 
+          id="confirmPassword" 
+          [(ngModel)]="confirmPassword" 
+          name="confirmPassword" 
+          required
+        >
+      </div>
+  
+      <div class="form-group">
+        <label for="cin">🆔 CIN:</label>
+        <input 
+          type="text" 
+          id="cin" 
+          [(ngModel)]="cin" 
+          name="cin" 
+          required 
+          maxlength="8" 
+          pattern="^[0-9]{8}$" 
+          title="CIN must be exactly 8 digits long."
+        >
+      </div>
+  
+      <button type="submit"> Register ✅</button>
+    </form>
+    <p>Already have an account? <a routerLink="/login">Login</a></p>
+  </div>
+  
+  

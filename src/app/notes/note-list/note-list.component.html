@@ -1,0 +1,41 @@
+<!-- Navbar with title, logo, and Home button -->
+<nav class="navbar">
+  <a href="/" class="logo">
+    <img src="/assets/logo.jpg" alt="Logo">
+    <h1>Website Title</h1>
+  </a>
+  <div class="navbar-links">
+    <a href="/home" class="nav-button">Home</a>
+  </div>
+</nav>
+<div class="note-list-container">
+  <h1>My Notes</h1>
+
+  <div *ngIf="notes.length > 0; else noNotes">
+    <table class="note-table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Titre</th>
+          <th>Date de modification</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let note of notes; let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>{{ note.title }}</td>
+          <td>{{ note.lastModified | date: 'dd/MM/yyyy' }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <ng-template #noNotes>
+    <div class="no-notes-container">
+      <img src="assets/triste1.png" alt="Cartoon crying" class="crying-image" />
+      <p class="no-notes-text">No notes recorded yet!</p>
+    </div>
+  </ng-template>
+
+  <button class="create-note-btn" (click)="onCreate()">Create your first note</button>
+</div>

@@ -1,0 +1,239 @@
+/* Style global */
+body, html {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.footer {
+  position: relative;
+  bottom: auto;
+}
+
+/* Barre de navigation */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #293ec5; /* Couleur de fond de la navbar */
+  padding: 10px 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.navbar .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none; 
+  color: inherit; 
+  cursor: pointer;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.navbar .logo:hover {
+  transform: scale(1.1); /* Zoom sur le logo */
+  filter: brightness(1.2); 
+}
+
+.navbar .logo img {
+  width: 50px;
+  height: 50px;
+  transition: transform 0.3s ease;
+}
+
+.navbar .logo h1 {
+  color: #ffffff;
+  font-size: 1.8rem;
+  margin: 0;
+  font-weight: bold;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.navbar .logo:hover img, 
+.navbar .logo:hover h1 {
+  transform: scale(1.1);
+}
+
+/* Boutons de navigation */
+.navbar-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-button {
+  padding: 10px 20px;
+  background-color: #fd98f4;
+  border: none;
+  color: #000000;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+  border-radius: 5px;
+  text-decoration: none;
+  font-family:Impact, 'Arial Narrow Bold', sans-serif;
+}
+
+.nav-button:hover {
+  background-color: #00ff4c;
+  color: #fff;
+  transform: scale(1.1); /* Zoom au survol des boutons */
+}
+
+/* Contenu principal */
+.main-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: calc(100vh - 60px);
+  padding: 20px 20px 10px; /* Réduction du padding pour rapprocher le contenu */
+}
+
+.content {
+  text-align: center;
+}
+
+.content h1 {
+  font-size: 3.5rem;
+  color: #282c34;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+  letter-spacing: 2px;
+  transition: transform 0.3s ease, color 0.3s ease;
+  animation: bounce 1.5s infinite; /* Ajout d'une animation */
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.intro-text {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+/* Bouton "Get Started" avec animation */
+.cta-button {
+  padding: 15px 30px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  animation: pulse 5s infinite; /* Animation pulsante */
+}
+
+.cta-button:hover {
+  background-color: #08be26;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.6);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(0, 123, 255, 0.8);
+  }
+}
+
+/* Vidéo */
+.video-container {
+  margin-top: 30px; /* Réduction de l'espacement */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+video {
+  max-width: 70%;
+  height: auto;
+}
+
+/* Footer */
+.footer {
+  background-color: #99b1f4;
+  text-align: center;
+  padding: 2rem;
+}
+
+.footer h2 {
+  color: #000000;
+  margin-bottom: 1.5rem;
+}
+
+.footer p {
+  font-size: 1rem;
+  color: #7b3c38;
+}
+
+/* Médias queries pour responsivité */
+@media (max-width: 768px) {
+  .navbar {
+      flex-direction: column;
+      text-align: center;
+  }
+
+  .navbar-links {
+      flex-direction: column;
+      gap: 10px;
+  }
+
+  .content h1 {
+      font-size: 2.5rem;
+  }
+
+  .content p {
+      font-size: 1rem;
+  }
+
+  .video-container {
+      margin-top: 20px;
+  }
+}
+/* Animations pour emojis mobiles dansants */
+@keyframes dance {
+  0% {
+    transform: translateX(0) rotate(0deg);
+  }
+  25% {
+    transform: translateX(10px) rotate(15deg);
+  }
+  50% {
+    transform: translateX(0) rotate(30deg);
+  }
+  75% {
+    transform: translateX(-10px) rotate(-15deg);
+  }
+  100% {
+    transform: translateX(0) rotate(0deg);
+  }
+}
+
+.emoji {
+  display: inline-block;
+  animation: dance 2s ease-in-out infinite; /* Animation de danse infinie */
+  font-size: 2rem;
+  margin: 0 5px;
+}
+
