@@ -1,26 +1,14 @@
-<!-- Navbar with title, logo, and Home button -->
-<nav class="navbar">
-  <a href="/" class="logo">
-    <img src="/assets/logo.jpg" alt="Logo">
-    <h1>Website Title</h1>
-  </a>
-  <div class="navbar-links">
-    <a href="/home" class="nav-button">Home</a>
-  </div>
-</nav>
-
-<!-- Login Form Section -->
 <div class="login-container">
   <div class="emoji-container">
     <span class="emoji">✍️</span>
     <span class="emoji">💻</span>
-    <span class="emoji">📜</span>
+    <span class="emoji">📝</span>
   </div>
 
   <div class="login-form">
     <h1 class="form-title">Login</h1>
     
-    <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
+    <form (ngSubmit)="onLogin()" #loginForm="ngForm">
       <div class="input-group">
         <label for="email" class="input-label">Email</label>
         <input 
@@ -63,9 +51,18 @@
 
       <button type="submit" class="submit-btn" [disabled]="loginForm.invalid">Login</button>
     </form>
+    <div class="forgot-password">
+      <p>
+        <a (click)="onForgotPassword()">Forgot your password?</a>
+      </p>
+    </div>
+    
 
     <div class="register-text">
       <p>Don't have an account? <a (click)="goToRegister()">Register</a></p>
     </div>
   </div>
+</div>
+<div *ngIf="errorMessage">
+  <p class="error-message">{{ errorMessage }}</p>
 </div>

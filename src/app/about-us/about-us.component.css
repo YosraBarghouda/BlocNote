@@ -1,0 +1,147 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4; 
+    color: #333; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
+}
+
+.all {
+    background-color: white; 
+    border-radius: 8px; 
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); 
+    padding: 20px; 
+    max-width: 800px; 
+    width: 90%; 
+    text-align: center; 
+    margin: 0 auto; 
+}
+
+h1 {
+    margin-bottom: 20px; 
+    color: #293ec5; 
+    font-family: Impact, 'Arial Narrow Bold', sans-serif;
+}
+
+.content-section {
+    margin: 20px 0; 
+}
+
+.text-container {
+    margin-bottom: 20px; 
+}
+
+h2 {
+    margin: 15px 0; 
+    color: #8514ae; 
+    font-family: Impact, 'Arial Narrow Bold', sans-serif;
+}
+
+ul {
+    list-style-type: none; 
+    padding: 0; 
+    text-align: left; 
+}
+
+ul li {
+    margin: 10px 0; 
+    text-align: center;
+}
+
+.image-container {
+    display: flex; 
+    justify-content: center; 
+    margin: 20px 0; 
+}
+
+.image-left, .image-right {
+    width: 45%; 
+    margin: 0 2.5%; 
+    border-radius: 5px; 
+    transition: transform 0.3s; 
+}
+
+.image-left:hover, .image-right:hover {
+    transform: scale(1.05); 
+}
+
+
+form {
+    margin-top: 40px; 
+    text-align: center; 
+}
+
+textarea {
+    width: 80%; 
+    height: 100px; 
+    margin-top: 10px; 
+    border-radius: 5px; 
+    border: 2px solid #0a8204; 
+    padding: 10px; 
+    font-size: 16px; 
+    resize: none; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+    transition: border-color 0.3s; 
+}
+
+textarea:focus {
+    border-color: #000000; 
+    outline: none; 
+}
+
+button {
+    background-color: #0a8204; 
+    color: white; 
+    border: none; 
+    border-radius: 5px; 
+    padding: 10px 20px; 
+    cursor: pointer; /* Pointer cursor on hover */
+    margin-top: 10px; /* Space above the button */
+    transition: background-color 0.3s; /* Smooth background color change */
+    font-size: 16px; /* Font size for the button */
+}
+
+button:hover {
+    background-color: #0a400d; /* Darker green on hover */
+}
+
+/* Title for the comment section */
+.comment-title {
+    font-size: 20px; /* Font size for the title */
+    margin-bottom: 10px; /* Space below the title */
+    color: #000000; /* Dark color for the title */
+    font-weight: bold; /* Bold text for the title */
+}
+.feedback-section {
+    margin-top: 40px; /* Space above the feedback section */
+}
+
+.feedback-container {
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Stack feedback items vertically */
+    align-items: center; /* Center items horizontally */
+}
+
+.feedback-item {
+    background-color: #e7f3fe; /* Light blue background */
+    border: 2px solid #2196F3; /* Blue border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 15px; /* Padding inside the box */
+    margin: 10px 0; /* Space between feedback items */
+    width: 90%; /* Width of the feedback box */
+    max-width: 500px; /* Maximum width for larger screens */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.feedback-item p {
+    margin: 0; /* Remove default margin from paragraph */
+    color: #333; /* Dark text color for readability */
+}

@@ -1,0 +1,95 @@
+<div class="all">
+    <h1>Welcome to Typy_Box</h1>
+    <img src="assets/about.jpg" alt="A creative workspace" class="image-left" />
+
+    <section class="content-section">
+        <div class="container">
+            <div class="text-container">
+                <p>Share your ideas and suggestions for Typy_Box! Submit your feedback or feature requests down below.</p>
+
+                <h2><strong>Get Started</strong></h2>
+                <h2><strong>Write away, no need to think twice ❤️</strong></h2>
+
+                <ul>
+                    <li><strong>New User:</strong> Create a FREE account for private notes and access from anywhere.</li>
+                    <li><strong>Registered User:</strong> Create, edit, and save notes anytime.</li>
+                </ul>
+
+                <h2><strong>What can you do with Typy_Box?</strong></h2>
+                <div class="features">
+                    <h4><strong>Create & Customize</strong></h4>
+                    <ul>
+                        <li>Public, private, or password-protected notes.</li>
+                        <li>Organize notes with folders.</li>
+                        <li>Import notes from Word/PDF.</li>
+                        <li>Create checklists & to-do lists.</li>
+                        <li>Record & attach audio.</li>
+                    </ul>
+
+                    <h4><strong>Share & Collaborate</strong></h4>
+                    <ul>
+                        <li>Share via social media or email.</li>
+                    </ul>
+
+                    <h4><strong>Security & Privacy</strong></h4>
+                    <ul>
+                        <li>Strong passwords for enhanced security.</li>
+                        <li>Control who can view and edit your notes.</li>
+                        <li>Secure cloud storage for your notes.</li>
+                    </ul>
+                </div>
+
+                <h2><strong>Why use Typy_Box?</strong></h2>
+                <ul>
+                    <li>Simple & Easy: Quickly jot down ideas, create to-do lists, take notes.</li>
+                    <li>Accessible: Access notes from anywhere with an internet connection.</li>
+                    <li>Highly Customizable: Tailor it to your needs.</li>
+                </ul>
+
+                <h2><strong>Need Help?</strong></h2>
+                <p>Leave a comment or email us at <a href="mailto:typy_box@gmail.com">typy_box&#64;gmail.com</a>.</p>
+            </div>
+
+            <div class="image-container">
+                <img src="assets/aboutus2.jpg" alt="Collaboration in action" class="image-right" />
+            </div>
+        </div>
+    </section>
+
+    <form #feedbackForm="ngForm" (ngSubmit)="onSubmit(feedbackForm)">
+        <div>
+            <label for="comment" class="comment-title">Leave a Comment / Feedback:</label>
+            <textarea
+                id="comment"
+                name="comment"
+                [(ngModel)]="comment"
+                required
+            ></textarea>
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+
+    <section class="feedback-section">
+        <h2><strong>Our Users' Feedback</strong></h2>
+        <img src="assets/feedback2.png" alt="User  feedback" class="image-left" />
+        <div class="feedback-container">
+            <div class="feedback-item">
+                <p><strong>John Doe:</strong> "Typy_Box has changed the way I organize my notes. It's so easy to use!"</p>
+            </div>
+            <div class="feedback-item">
+                <p><strong>Jane Smith:</strong> "I love the customization options! I can make it look exactly how I want."</p>
+            </div>
+            <div class="feedback-item">
+                <p><strong>Emily Johnson:</strong> "No need to always pick my phone with me. I can work seamlessly."</p>
+            </div>
+            <div class="feedback-item">
+                <p><strong>Michael Brown:</strong> "Great app! I can access my notes from anywhere, which is a lifesaver."</p>
+            </div>
+        </div>
+    </section>
+
+    <audio autoplay loop>
+        <source src="assets/song.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+</div>

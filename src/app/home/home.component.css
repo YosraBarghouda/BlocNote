@@ -4,116 +4,252 @@ body, html {
   margin: 0;
   display: flex;
   flex-direction: column;
+  background-image: linear-gradient(to bottom, #007bff, #003580); 
+  overflow: hidden;
 }
 
+/* Contenu principal */
 .main-content {
   flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
-}
-
-.footer {
+  padding: 20px;
   position: relative;
-  bottom: auto;
 }
 
-/* Barre de navigation */
-.navbar {
+/* Animation des boules colorées dansantes */
+@keyframes bubbleDance {
+  0% { transform: translateY(0); opacity: 0.8; }
+  50% { transform: translateY(-20px); opacity: 1; }
+  100% { transform: translateY(0); opacity: 0.8; }
+}
+
+.main-content::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 50px;
+  height: 50px;
+  background-color: #00ff4c;
+  border-radius: 50%;
+  animation: bubbleDance 3s infinite;
+  z-index: -1;
+  opacity: 0.5;
+  animation-delay: 0s;
+}
+
+.main-content::after {
+  content: "";
+  position: absolute;
+  top: 20%;
+  left: 70%;
+  width: 60px;
+  height: 60px;
+  background-color: #fd98f4;
+  border-radius: 50%;
+  animation: bubbleDance 3s infinite;
+  z-index: -1;
+  opacity: 0.5;
+  animation-delay: 1s;
+}
+
+/* Container principal */
+.main-content-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #293ec5; /* Couleur de fond de la navbar */
-  padding: 10px 20px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 1200px;
 }
 
-.navbar .logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  text-decoration: none; 
-  color: inherit; 
-  cursor: pointer;
-  transition: transform 0.3s ease, filter 0.3s ease;
-}
-
-.navbar .logo:hover {
-  transform: scale(1.1); /* Zoom sur le logo */
-  filter: brightness(1.2); 
-}
-
-.navbar .logo img {
-  width: 50px;
-  height: 50px;
-  transition: transform 0.3s ease;
-}
-
-.navbar .logo h1 {
-  color: #ffffff;
-  font-size: 1.8rem;
-  margin: 0;
-  font-weight: bold;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s ease;
-}
-
-.navbar .logo:hover img, 
-.navbar .logo:hover h1 {
-  transform: scale(1.1);
-}
-
-/* Boutons de navigation */
-.navbar-links {
-  display: flex;
-  gap: 20px;
-}
-
-.nav-button {
-  padding: 10px 20px;
-  background-color: #fd98f4;
-  border: none;
-  color: #000000;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
-  border-radius: 5px;
-  text-decoration: none;
-  font-family:Impact, 'Arial Narrow Bold', sans-serif;
-}
-
-.nav-button:hover {
-  background-color: #00ff4c;
+/* Contenu textuel */
+.text-content {
+  flex: 1;
   color: #fff;
-  transform: scale(1.1); /* Zoom au survol des boutons */
-}
-
-/* Contenu principal */
-.main-content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  min-height: calc(100vh - 60px);
-  padding: 20px 20px 10px; /* Réduction du padding pour rapprocher le contenu */
-}
-
-.content {
+  max-width: 600px;
+  padding: 20px;
   text-align: center;
 }
 
-.content h1 {
-  font-size: 3.5rem;
-  color: #282c34;
-  margin-bottom: 20px;
-  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
-  letter-spacing: 2px;
-  transition: transform 0.3s ease, color 0.3s ease;
-  animation: bounce 1.5s infinite; /* Ajout d'une animation */
+/* Titre impressionnant */
+.text-content h1 {
+  font-size: 3rem;
+  color: #fff;
+  margin-bottom: 10px;
+  text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3), 0 0 20px rgba(0, 123, 255, 0.8);
+  letter-spacing: 3px;
+  animation: glow 2s infinite;
+  line-height: 1.2;
 }
 
-@keyframes bounce {
+@keyframes glow {
+  0%, 100% {
+    text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3), 0 0 20px rgba(0, 123, 255, 0.8);
+  }
+  50% {
+    text-shadow: 4px 4px 20px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 123, 255, 1);
+  }
+}
+
+/* Phrases dans le texte */
+.text-content p {
+  font-size: 1.2rem;
+  color: #fff;
+  margin: 10px 0;
+  line-height: 1.6;
+  font-family: Georgia, 'Times New Roman', Times, serif
+}
+
+/* Section image */
+.image-content {
+  flex: 1;
+  text-align: center;
+}
+
+.image-content img {
+  max-width: 100%;
+  height: auto;
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.3));
+}
+
+.cta-button {
+  padding: 12px 30px;
+  background-color: #007bff;
+  color: #fff;
+  border: 2px solid #007bff;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  cursor: pointer; 
+  transition: all 0.3s ease-in-out; 
+  text-decoration: none;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+  animation: buttonZoom 1s infinite; /* Add a zoom animation */
+}
+
+@keyframes buttonZoom {
+  0% {
+    transform: scale(1); 
+  }
+  50% {
+    transform: scale(1.05); 
+  }
+  100% {
+    transform: scale(1); 
+  }
+}
+
+.cta-button:hover {
+  background-color: #0056b3; 
+  border-color: #0056b3;
+  transform: translateY(-5px); 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+  animation: buttonZoomHover 0.8s infinite; 
+}
+
+@keyframes buttonZoomHover {
+  0% {
+    transform: scale(1.05); 
+  }
+  50% {
+    transform: scale(1.1); 
+  }
+  100% {
+    transform: scale(1.05); 
+  }
+}
+
+.cta-button:before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border-radius: inherit;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2); 
+  pointer-events: none; 
+}
+
+
+
+
+/* Médias queries pour responsivité */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .navbar-links {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .main-content-container {
+    flex-direction: column;
+  }
+
+  .content h1 {
+    font-size: 2.5rem;
+  }
+
+  .content p {
+    font-size: 1rem;
+  }
+}
+.inspiration {
+  background-color: #f8f8f8;
+  padding: 40px 0;
+  text-align: center;
+}
+
+.inspiration-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.video-container {
+  width: 45%;
+  margin-bottom: 20px;
+}
+
+.video-container h2 {
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.quotes-container {
+  position: relative;
+  padding: 50px;
+  text-align: center;
+  color: #333;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.quotes-container h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.quotes-container blockquote {
+  font-style: italic;
+  font-size: 18px;
+  margin: 10px 0;
+  animation: float 4s ease-in-out infinite;
+}
+
+/* Animation pour les citations */
+@keyframes float {
   0%, 100% {
     transform: translateY(0);
   }
@@ -122,118 +258,98 @@ body, html {
   }
 }
 
-.intro-text {
-  font-size: 1.2rem;
-  color: #555;
-  margin-bottom: 30px;
+/* Conteneur des bulles */
+.bubbles-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
 }
 
-/* Bouton "Get Started" avec animation */
-.cta-button {
-  padding: 15px 30px;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  font-size: 1.1rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  animation: pulse 5s infinite; /* Animation pulsante */
+/* Styles des bulles */
+.bubble {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  animation: bubble-rise 6s linear infinite, rotate 6s linear infinite;
 }
 
-.cta-button:hover {
-  background-color: #08be26;
+/* Couleurs, tailles et positions différentes */
+.bubble:nth-child(1) {
+  width: 40px;
+  height: 40px;
+  background: rgb(41, 201, 255); /* Bleu clair */
+  left: 10%;
+  animation-delay: 1s;
 }
 
-@keyframes pulse {
-  0%, 100% {
-    transform: scale(1);
-    box-shadow: 0 0 10px rgba(0, 123, 255, 0.6);
-  }
-  50% {
-    transform: scale(1.05);
-    box-shadow: 0 0 20px rgba(0, 123, 255, 0.8);
-  }
+.bubble:nth-child(2) {
+  width: 25px;
+  height: 25px;
+  background: rgb(234, 33, 67); /* Rose clair */
+  left: 40%;
+  animation-delay: 2s;
 }
 
-/* Vidéo */
-.video-container {
-  margin-top: 30px; /* Réduction de l'espacement */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+.bubble:nth-child(3) {
+  width: 30px;
+  height: 30px;
+  background: rgb(255, 230, 0); /* Jaune clair */
+  left: 70%;
+  animation-delay: 3s;
 }
 
-video {
-  max-width: 70%;
-  height: auto;
+.bubble:nth-child(4) {
+  width: 20px;
+  height: 20px;
+  background: rgb(0, 255, 0); /* Vert clair */
+  left: 20%;
+  animation-delay: 4s;
 }
 
-/* Footer */
-.footer {
-  background-color: #99b1f4;
-  text-align: center;
-  padding: 2rem;
+.bubble:nth-child(5) {
+  width: 50px;
+  height: 50px;
+  background: rgb(255, 0, 255); /* Violet clair */
+  left: 80%;
+  animation-delay: 5s;
 }
 
-.footer h2 {
-  color: #000000;
-  margin-bottom: 1.5rem;
-}
-
-.footer p {
-  font-size: 1rem;
-  color: #7b3c38;
-}
-
-/* Médias queries pour responsivité */
-@media (max-width: 768px) {
-  .navbar {
-      flex-direction: column;
-      text-align: center;
-  }
-
-  .navbar-links {
-      flex-direction: column;
-      gap: 10px;
-  }
-
-  .content h1 {
-      font-size: 2.5rem;
-  }
-
-  .content p {
-      font-size: 1rem;
-  }
-
-  .video-container {
-      margin-top: 20px;
-  }
-}
-/* Animations pour emojis mobiles dansants */
-@keyframes dance {
+/* Animation de montée des bulles */
+@keyframes bubble-rise {
   0% {
-    transform: translateX(0) rotate(0deg);
-  }
-  25% {
-    transform: translateX(10px) rotate(15deg);
+    transform: translateY(100%) scale(1);
+    opacity: 0.7;
   }
   50% {
-    transform: translateX(0) rotate(30deg);
-  }
-  75% {
-    transform: translateX(-10px) rotate(-15deg);
+    opacity: 1;
   }
   100% {
-    transform: translateX(0) rotate(0deg);
+    transform: translateY(-100%) scale(1.2);
+    opacity: 0;
   }
 }
 
-.emoji {
-  display: inline-block;
-  animation: dance 2s ease-in-out infinite; /* Animation de danse infinie */
-  font-size: 2rem;
-  margin: 0 5px;
+/* Animation de rotation */
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
+
+video {
+  width: 100%;
+  max-width: 600px;
+  margin: 10px;
+  
+}

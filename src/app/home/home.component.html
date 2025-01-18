@@ -1,113 +1,57 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bloc Note Online</title>
-</head>
+
 <body>
-
-    <nav class="navbar">
-      <a href="/home" class="logo">
-        <img src="assets/logo.jpg" alt="Logo du site">
-        <h1>Typy_Box</h1>
-      </a>
-    
-      <div class="navbar-links">
-        <a routerLink="/home" class="nav-button">Home</a>
-        <a routerLink="/login" class="nav-button">Login</a>
-        <a routerLink="/register" class="nav-button">Register</a>
-        <button id="logoutButton" style="display:none;" (click)="logout()">Logout</button>
-      </div>
-    </nav>
-    
-
-  
-
-  <!-- Main Content -->
   <section class="main-content">
-    <div id="welcomeContent" class="content">
-      <h1 class="fade-in">Welcome to your own Online Notepad</h1>
-      <p class="fade-in intro-text">
-        Create, edit, and manage your notes anywhere, anytime. Stay organized and productive with this intuitive platform.
-      </p>
-      <div class="emoji-container">
-        <span class="emoji">📓</span>
-        <span class="emoji">✏️</span>
-        <span class="emoji">📒</span>
+    <div class="main-content-container">
+      <div class="text-content">
+        <h1>Welcome to your own Online Notepad</h1>
+        <p>
+          Create, edit, and manage your notes anywhere, anytime <br> Stay organized and productive with this intuitive platform.
+        </p>
+
+        <div class="cta-container">
+          <p class="cta-text">Want to start taking notes? It's easy!</p>
+          <button class="cta-button" routerLink="/register">Get Started</button>
+        </div>
       </div>
-      <div class="cta-container">
-        <p class="cta-text">Want to start taking notes? It's easy!</p>
-        <button class="cta-button" routerLink="/register">Get Started</button>
+      <div class="image-content">
+        <img src="assets/image.jpg" alt="Illustration">
       </div>
+    </div>
+  </section>
+  <section class="inspiration">
+    <div class="inspiration-container">
       <div class="video-container">
-        <video width="900" height="200" controls autoplay loop muted>
-          <source src="assets/vid.mp4" type="video/mp4">
-          Votre navigateur ne supporte pas la vidéo.
+        <h2>Boost your Productivity</h2>
+        <p>Watch this video to see how easy and powerful our platform can be in helping you stay organized and productive.</p>
+        <video autoplay muted loop>
+          <source src="assets/vid2.mp4" type="video/mp4">
+          Your browser does not support the video tag.
         </video>
       </div>
-    </div>
-
-    <div id="loginForm" class="login-form" style="display:none;">
-      <app-login></app-login>
+      <div class="quotes-container">
+        <h2>Quotes for Motivation</h2>
+        <div class="bubbles-container">
+          <span class="bubble"></span>
+          <span class="bubble"></span>
+          <span class="bubble"></span>
+          <span class="bubble"></span>
+          <span class="bubble"></span>
+        </div>
+        <blockquote>
+          "The secret of getting ahead is getting started"  - Mark Twain
+        </blockquote>
+        <blockquote>
+          "Don't watch the clock; do what it does. Keep going"  - Sam Levenson
+        </blockquote>
+        <blockquote>
+          "Success is the sum of small efforts, repeated day in and day out"  - Robert Collier
+        </blockquote>
+        <blockquote>
+          "The future of education is intertwined with technology"  - David Lassner
+        </blockquote>
+      </div>
+      
     </div>
   </section>
+  
 
-
-  <!-- Video Section -->
-  <section class="video-section">
-    <div class="video-container">
-      <video autoplay muted loop>
-        <source src="path/to/your/video.mp4" type="video/mp4">
-        Votre navigateur ne supporte pas la vidéo.
-      </video>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer id="contact" style="padding: 2rem; background-color: #99b1f4;">
-    <h2 style="text-align: center; color: #000000; margin-bottom: 1.5rem;">Contactez-nous</h2>
-    <div style="text-align: center; margin-bottom: 1.5rem;">
-      <p style="font-size: 1.2rem; font-weight: bold; color: #000000;">📞 Téléphone : <a href="tel:+1234567890" class="contact-link">+216 55 120 887</a></p>
-      <p style="font-size: 1.2rem; font-weight: bold; color: #000000;">📧 Email : <a href="mailto:note@gmail.com" class="contact-link">example.com</a></p>
-    </div>
-    <ul style="display: flex; justify-content: center; gap: 2rem; list-style: none; margin-bottom: 1.5rem;">
-      <li><a href="https://www.facebook.com/yosra.barghouda" class="social-link">Facebook</a></li>
-      <li><a href="https://www.instagram.com/yosra_barghouda" class="social-link">Instagram</a></li>
-      <li><a href="https://www.linkedin.com/in/yosra-barghouda-91b93b293/" class="social-link">LinkedIn</a></li>
-      <li><a href="https://x.com/?lang=fr" class="social-link">Twitter</a></li>
-      <li><a href="https://www.youtube.com/" class="social-link">YouTube</a></li>
-    </ul>
-    <div style="text-align: center; font-size: 1rem; color: #7b3c38;">
-      <p>📍 Adresse : 123 Rue de la Mode, TOZEUR, Tunisie</p>
-      <p>🕒 Horaires : Lun - Ven : 9h00 - 18h00 | Sam : 10h00 - 16h00</p>
-    </div>
-    <p style="text-align: center; padding: 1rem; background-color: #e3f57b; color: #000000;">
-      © 2024 Bloc Note Online. Tous droits réservés.
-    </p>
-  </footer>
-
-  <!-- JavaScript -->
-  <script>
-    function goHome() {
-      // Logique pour la navigation vers l'accueil
-      alert("Navigation vers l'accueil !");
-    }
-
-    function goToLogin() {
-      document.getElementById("welcomeContent").style.display = "none";
-      document.getElementById("loginForm").style.display = "block";
-    }
-
-    function goToRegister() {
-      // Logique pour aller à la page d'inscription
-      alert("Redirection vers la page d'inscription !");
-    }
-
-    function logout() {
-      // Logique pour déconnecter l'utilisateur
-      alert("Déconnexion !");
-    }
-  </script>
-</body>
-</html>

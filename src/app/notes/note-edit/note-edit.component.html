@@ -1,29 +1,30 @@
-<!-- Navbar with title, logo, and Home button -->
-<nav class="navbar">
-  <a href="/" class="logo">
-    <img src="/assets/logo.jpg" alt="Logo">
-    <h1>Website Title</h1>
-  </a>
-  <div class="navbar-links">
-    <a href="/home" class="nav-button">Home</a>
-  </div>
-</nav>
 <div class="note-edit-container">
-  <h2>Create a New Note</h2>
+  <h2 *ngIf="note_id === 0 || note_id === undefined">Create a New Note</h2>
+  <h2 *ngIf="note_id !== 0">Modify a Note</h2>
+
   <form (ngSubmit)="onSave()">
     <div class="form-group">
       <label for="title">Title:</label>
-      <input type="text" id="title" [(ngModel)]="title" name="title" required>
+      <input type="text" id="title" [(ngModel)]="title" name="title" required />
     </div>
     <div class="form-group">
       <label for="content">Content:</label>
       <textarea id="content" [(ngModel)]="content" name="content" rows="10" required></textarea>
     </div>
-    <button type="submit">Save Note</button>
+
+    <button *ngIf="note_id === 0" type="submit">Save Note</button>
+    <button *ngIf="note_id !== 0" type="submit">Save Changes</button>
+    <button *ngIf="note_id !== 0" type="reset" [routerLink]="['/notes']">Cancel</button>
   </form>
 </div>
-<style>
-    .note-edit-container {
-    background-image: url('assets/back.jpg'); 
-  }
-</style>
+
+<div class="center">
+  <a href="https://gemini.google.com/app?hl=fr">
+    <div id="box">
+      <span>AI</span>
+    </div>
+    <img class="ai-image" src="/assets/ai.png" alt="AI" />
+  </a>
+</div>
+
+

@@ -1,1 +1,29 @@
-<p>notes works!</p>
+<button (click)="addNote()" class="add1">Add note</button>
+<button routerLink="/profile" class="b2">Visit Profile</button>
+
+<table class="note-table">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Title</th>
+      <th>Content</th>
+      <th>Last Modified</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let note of notes; let i = index">
+      <td>{{ i + 1 }}</td>
+      <td>{{ note.title }}</td>
+      <td>{{ note.content }}</td>
+      <td>{{ note.updated_at |date:'short' }}</td>
+      <td>
+        <button (click)="editNote(note.id)" class="edit-button">Edit</button>
+        <button (click)="deleteNote(note.id)" class="delete-button">Delete</button>
+      </td>
+    </tr>
+    <tr *ngIf="notes.length === 0">
+      <td colspan="5">No notes recorded yet!</td>
+    </tr>
+  </tbody>
+</table>
