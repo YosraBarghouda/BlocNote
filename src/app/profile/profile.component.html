@@ -1,15 +1,15 @@
 <div class="all">
+  <button routerLink="/notes" class="back">Back</button>
+
   <div class="profile-container">
     <h2>Your Profile</h2>
 
-    <!-- Profile Picture Section -->
     <div class="user-picture-upload">
       <img *ngIf="previewImage" [src]="previewImage" alt="Profile Preview" class="preview-image" />
       <label for="picture" class="upload-label">Upload Picture</label>
       <input type="file" id="picture" (change)="onFileSelected($event)" />
     </div>
 
-    <!-- Profile Form -->
     <form (ngSubmit)="onSave()">
       <div class="form-group">
         <label for="email">Email:</label>

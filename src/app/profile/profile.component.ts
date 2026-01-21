@@ -27,10 +27,10 @@ export class ProfileComponent implements OnInit {
       this.profileService.getProfile(userId).subscribe({
         next: (profile) => {
           this.email = profile.email;
-          this.password = profile.password; 
+          this.password = profile.password;
           this.bio = profile.bio;
           this.previewImage = "data:image/jpeg;base64," + profile.picture;
-          this.nb_notes = profile.nb_notes; 
+          this.nb_notes = profile.nb_notes;
         },
         error: (err) => {
           console.error('Error loading profile:', err);
@@ -70,7 +70,7 @@ export class ProfileComponent implements OnInit {
     this.profileService.updateProfile(userId, formData).subscribe({
       next: () => {
         alert('Profile updated successfully!');
-        this.loadUserProfile(); 
+        this.loadUserProfile();
       },
       error: (err) => {
         console.error('Error updating profile:', err);

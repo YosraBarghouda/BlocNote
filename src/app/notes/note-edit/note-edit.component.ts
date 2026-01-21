@@ -51,7 +51,6 @@ export class NoteEditComponent implements OnInit {
     };
   
     if (this.note_id && this.note_id !== 0) {
-      // Update existing note
       this.noteService.updateNote(this.note_id, noteData).subscribe({
         next: () => {
           alert('Note updated successfully!');
@@ -63,7 +62,6 @@ export class NoteEditComponent implements OnInit {
         },
       });
     } else {
-      // Create a new note
       this.noteService.createNote(noteData).subscribe({
         next: () => {
           alert('Note saved successfully!');

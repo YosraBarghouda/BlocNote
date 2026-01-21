@@ -85,7 +85,7 @@
 }
 
 .edit-button {
-  background-color: #0026ff; /* Blue */
+  background-color: #0026ff;
   color: white;
   padding: 10px 15px; 
   border: none;
@@ -96,21 +96,21 @@
 }
 
 .edit-button:hover {
-  background-color: #0026ff; 
-  transform: scale(1.1); /* Zoom in on hover */
+  background-color: #0026ff;
+  transform: scale(1.1);
 }
 .delete-button {
-  background-color: #e7152a; 
+  background-color: #e7152a;
   color: white;
-  padding: 10px 15px; 
+  padding: 10px 15px;
   border: none;
-  border-radius: 5px; 
+  border-radius: 5px;
   cursor: pointer;
 }
 
 .delete-button:hover {
   background-color: #e7152a; 
-  transform: scale(1.1); /* Zoom in on hover */
+  transform: scale(1.1);
 }
 
 .b2 {
@@ -134,4 +134,59 @@
 .b2:hover {
   background: #44ff00; 
   transform: scale(1.1); 
+}
+
+.search-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.search-box {
+  width: 300px;
+  padding: 12px 10px;
+  font-size: 16px;
+  border: 2px solid #ddd;
+  border-radius: 25px;
+  outline: none;
+  transition: all 0.3s ease;
+  background: linear-gradient(135deg, #430462, #047086,#ea2fea);
+  color: #333;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-family: 'Arial', sans-serif;
+  position: relative;
+  margin-top: 10px;
+}
+
+.search-box:focus {
+  border-color: #000000;
+  background: linear-gradient(135deg, #efaffa, #9defe3);
+  color: rgb(0, 0, 0);
+  box-shadow: 0 4px 15px rgba(76, 175, 80, 0.5);
+  transform: scale(1.05);
+}
+
+.search-box::placeholder {
+  color: #b9b5b5;
+  font-style: italic;
+  transition: color 0.5s ease;
+}
+
+.search-box:focus::placeholder {
+  color: #000000;
+}
+
+.search-box:focus-visible {
+  animation: glow 0.5s infinite alternate;
+}
+
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 10px #c0d105;
+  }
+  100% {
+    box-shadow: 0 0 20px #000652;
+  }
 }

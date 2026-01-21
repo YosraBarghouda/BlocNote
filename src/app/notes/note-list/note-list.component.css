@@ -29,7 +29,7 @@
 }
 
 .crying-image {
-  max-width: 250px; /* Limite la taille de l'image */
+  max-width: 250px;
   margin-bottom: 20px;
 }
 
@@ -48,7 +48,6 @@
   transition: all 0.3s ease;
 }
 
-/* Animation d'électricité */
 @keyframes electric {
   0% {
     box-shadow: 0 0 15px rgba(255, 255, 255, 0.6), 0 0 25px rgba(255, 255, 255, 0.3);
@@ -64,13 +63,11 @@
   }
 }
 
-/* Effet au survol */
 .create-note-btn:hover {
   background-color: #22ed2c;
   transform: scale(1.05);
 }
 
-/* Responsive mobile-friendly */
 @media (max-width: 600px) {
   .create-note-btn {
     padding: 12px 20px;

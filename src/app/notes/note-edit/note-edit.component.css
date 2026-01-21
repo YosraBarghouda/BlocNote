@@ -2,20 +2,19 @@
   max-width: 900px;
   margin: 0 ;
   padding: 70px;
-  background: linear-gradient(135deg, #ffa1c7, #73abf4); /* Dégradé rose-beige */
+  background: linear-gradient(135deg, #ffa1c7, #73abf4);
   background-size: cover;
   border-radius: 20px;
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
   color: #333;
   font-family: 'Courier New', Courier, monospace;
-  position: relative; 
-  top: 10px; 
-  left: 6%; 
+  position: relative;
+  top: 10px;
+  left: 6%;
   margin-bottom: 50px;
 
 }
 
-/* Ajustement de l'espace blanc autour du formulaire */
 .note-edit-container h2 {
   text-align: center;
   font-size: 2rem;
@@ -51,7 +50,7 @@ input:focus, textarea:focus {
 }
 
 button {
-  width: 30%; /* Maintien de la largeur du bouton */
+  width: 30%;
   padding: 12px;
   background: #04d70b;
   color: white;
@@ -60,8 +59,8 @@ button {
   cursor: pointer;
   font-size: 1.2rem;
   transition: background 0.3s ease;
-  display: block; /* Change le bouton pour un élément de type bloc */
-  margin: 20px auto 0 auto; /* Centre le bouton et ajoute un espacement au-dessus */
+  display: block;
+  margin: 20px auto 0 auto;
 }
 
 
@@ -97,25 +96,25 @@ button {
 }
 .center {
   display: flex;
-  align-items: center; /* Aligne les éléments verticalement */
-  justify-content: flex-end; /* Positionne les éléments à droite */
+  align-items: center; 
+  justify-content: flex-end; 
   position: absolute;
-  top: 150px; /* Positionne un peu plus bas */
-  right: 10px; /* Positionne à droite de la page */
-  gap: 20px; /* Espacement entre l'image et le box */
-  animation: move-center 2s ease-in-out infinite; /* Animation pour la mobilité */
+  top: 150px; 
+  right: 10px; 
+  gap: 20px; 
+  animation: move-center 2s ease-in-out infinite; 
 }
 
 #box {
   position: relative;
   padding: 10px;
-  width: 50px; /* Taille du cercle */
+  width: 50px; 
   height: 50px;
   border-radius: 50%;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
   cursor: pointer;
   text-align: center;
-  font-size: 0.9em; /* Ajuste la taille du texte à l'intérieur du cercle */
+  font-size: 0.9em; 
   color: white;
   background: linear-gradient(45deg, #fa0053, #00B0FF, #b300ff, #ff9d00, #04d70b);
   font-family: 'Arial', sans-serif;
@@ -128,10 +127,9 @@ button {
   background-size: cover;
   background-position: center;
   transition: transform 0.3s ease;
-  object-fit: cover; /* Remplissage sans déformation */
+  object-fit: cover; 
 }
 
-/* Animation pour l'effet de lumière autour du box */
 @keyframes ai-button-glow {
   0% {
     background-position: 0 0;
@@ -156,15 +154,14 @@ button {
   }
 }
 
-/* Animation pour la mobilité */
 @keyframes move-center {
   0% {
     top: 150px;
     right: 10px;
   }
   50% {
-    top: 170px; /* Descend encore plus bas */
-    right: 20px; /* Déplace légèrement à droite */
+    top: 170px; 
+    right: 20px;
   }
   100% {
     top: 150px;

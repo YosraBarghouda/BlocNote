@@ -4,7 +4,7 @@ body, html {
   margin: 0;
   display: flex;
   flex-direction: column;
-  background-image: linear-gradient(to bottom, #007bff, #003580); 
+  background-image: linear-gradient(to bottom, #007bff, #340168); 
   overflow: hidden;
 }
 
@@ -87,10 +87,10 @@ body, html {
 
 @keyframes glow {
   0%, 100% {
-    text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3), 0 0 20px rgba(0, 123, 255, 0.8);
+    text-shadow: 4px 4px 10px rgb(226, 138, 15), 0 0 20px rgb(40, 39, 39);
   }
   50% {
-    text-shadow: 4px 4px 20px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 123, 255, 1);
+    text-shadow: 4px 4px 20px rgb(225, 132, 9), 0 0 40px rgb(255, 255, 255);
   }
 }
 
@@ -117,9 +117,9 @@ body, html {
 
 .cta-button {
   padding: 12px 30px;
-  background-color: #007bff;
+  background-color: #0009ae;
   color: #fff;
-  border: 2px solid #007bff;
+  border: 2px solid #ff9100;
   border-radius: 5px;
   font-size: 1.1rem;
   cursor: pointer; 

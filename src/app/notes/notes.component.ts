@@ -11,7 +11,8 @@ import { NoteService } from '../services/note.service';
 })
 export class NotesComponent implements OnInit {
   notes: any[] = [];
-  userId: string | null = localStorage.getItem('userId'); // Get userId from localStorage
+  searchQuery: string = '';
+  userId: string | null = localStorage.getItem('userId');
 
   constructor(
     private noteService: NoteService,
@@ -24,26 +25,24 @@ export class NotesComponent implements OnInit {
   }
 
   fetchNotes() {
-    this.noteService.getNotes()
-      .subscribe(
-        response => {
-          if (response.notes) {
-            this.notes = response.notes; // Mettre à jour la liste des notes
-            console.log(this.notes);
-          } else {
-            this.notes = [];
-          }
-        },
-        error => {
-          console.error('Error fetching notes:', error);
-          alert('Failed to fetch notes. Please try again.');
+    this.noteService.getNotes().subscribe(
+      (response) => {
+        if (response.notes) {
+          this.notes = response.notes;
+          console.log(this.notes);
+        } else {
+          this.notes = [];
         }
-      );
+      },
+      (error) => {
+        console.error('Error fetching notes:', error);
+        alert('Failed to fetch notes. Please try again.');
+      }
+    );
   }
-  
 
   addNote() {
-    this.router.navigate(['/note-edit/0', { userId: this.userId }]); 
+    this.router.navigate(['/note-edit/0', { userId: this.userId }]);
   }
 
   editNote(noteId: number) {
@@ -63,5 +62,19 @@ export class NotesComponent implements OnInit {
         }
       );
     }
+  }
+
+  filteredNotes() {
+    if (!this.searchQuery) {
+      return this.notes;
+    }
+
+    const query = this.searchQuery.toLowerCase();
+
+    return this.notes.filter(
+      (note) =>
+        note.title.toLowerCase().includes(query) ||
+        note.content.toLowerCase().includes(query)
+    );
   }
 }

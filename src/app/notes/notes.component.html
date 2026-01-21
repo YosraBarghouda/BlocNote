@@ -1,6 +1,16 @@
 <button (click)="addNote()" class="add1">Add note</button>
 <button routerLink="/profile" class="b2">Visit Profile</button>
 
+<div class="search-container">
+  <input
+    type="text"
+    [(ngModel)]="searchQuery"
+    placeholder="🔍 Search notes by title or content"
+    class="search-box"
+  />
+</div>
+
+
 <table class="note-table">
   <thead>
     <tr>
@@ -12,18 +22,21 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let note of notes; let i = index">
+    <tr
+      *ngFor="let note of filteredNotes(); let i = index"
+      (click)="editNote(note.id)"
+    >
       <td>{{ i + 1 }}</td>
       <td>{{ note.title }}</td>
       <td>{{ note.content }}</td>
-      <td>{{ note.updated_at |date:'short' }}</td>
+      <td>{{ note.updated_at | date: 'short' }}</td>
       <td>
-        <button (click)="editNote(note.id)" class="edit-button">Edit</button>
-        <button (click)="deleteNote(note.id)" class="delete-button">Delete</button>
+        <button (click)="editNote(note.id); $event.stopPropagation()" class="edit-button">Edit</button>
+        <button (click)="deleteNote(note.id); $event.stopPropagation()" class="delete-button">Delete</button>
       </td>
     </tr>
-    <tr *ngIf="notes.length === 0">
-      <td colspan="5">No notes recorded yet!</td>
+    <tr *ngIf="filteredNotes().length === 0">
+      <td colspan="5">No notes found matching your search!</td>
     </tr>
   </tbody>
 </table>

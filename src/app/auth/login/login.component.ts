@@ -1,6 +1,6 @@
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-login',
@@ -35,11 +35,11 @@ export class LoginComponent {
         alert(response.message);
     
         if (response.hasNotes) {
-          this.router.navigate(['/notes']); // Redirige vers les notes
+          this.router.navigate(['/notes']);
         } else if (response.hasNotes === false) {
-          this.router.navigate(['/note-list']); // Pas de notes
+          this.router.navigate(['/note-list']);
         } else if (response.message === 'unregistered user please register first') {
-          this.router.navigate(['/register']); // Utilisateur non enregistré
+          this.router.navigate(['/register']);
         } else {
           this.router.navigate(['/login']); 
         }
@@ -78,10 +78,10 @@ export class LoginComponent {
     })
     .subscribe({
       next: (response: any) => {
-        alert(response.message || "If the email exists, a reset link will be sent.");
+        alert(response.message || "If the email exists, a reset link will be sent");
       },
       error: (error: any) => {
-        this.errorMessage = error.error?.message || 'An error occurred. Please try again later.';
+        this.errorMessage = error.error?.message || 'If the email exists, a reset link will be sent';
         alert(this.errorMessage);
       }
     });
